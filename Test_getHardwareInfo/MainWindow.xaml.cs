@@ -103,11 +103,11 @@ namespace Test_getHardwareInfo
             // -------------------------------------------------------- Check query string items
             foreach (var item in _JSON_QueryString_Arr)
             {
-                tb_Disp.Text += item + "\n";
+                printLn(item + "");
             }
 
             int JSON_Query_Length = _JSON_QueryString_Arr.Count;
-            tb_Disp.Text += "Length = " + JSON_Query_Length + "\n";
+            printLn("Length = " + JSON_Query_Length + "");
 
 
             // -------------------------------------------------------- Operations
@@ -138,20 +138,20 @@ namespace Test_getHardwareInfo
                             string obj_Lv1_Name = lv1_Query.Split('[')[0];
                             int obj_Lv1_Name_Index = Int32.Parse(lv1_Query.Split('[')[1].Replace("[", "").Replace("]", ""));
 
-                            tb_Disp.Text += "# p1 lv1.1 = |" + lv1_Query + "|\n";
-                            tb_Disp.Text += "# obj_Lv1_Name = |" + obj_Lv1_Name + "|\n";
-                            tb_Disp.Text += "# obj_Lv1_Name_Index = |" + obj_Lv1_Name_Index + "|\n";
+                            printLn("# p1 lv1.1 = |" + lv1_Query + "|");
+                            printLn("# obj_Lv1_Name = |" + obj_Lv1_Name + "|");
+                            printLn("# obj_Lv1_Name_Index = |" + obj_Lv1_Name_Index + "|");
 
-                            MessageBox.Show("cp 1.1");
+                            //MessageBox.Show("cp 1.1");
 
                             resul_Lv1 = JsonConvert.DeserializeObject<object[]>(resul_Lv1.GetValue(obj_Lv1_Name).ToString())[obj_Lv1_Name_Index];
 
                         }
                         else
                         {
-                            tb_Disp.Text += "# lv1.2 = |" + lv1_Query + "|\n";
-                            tb_Disp.Text += "# p1 lv1.2 = |" + lv1_Query + "|\n";
-                            MessageBox.Show("cp 1.2");
+                            printLn("# lv1.2 = |" + lv1_Query + "|");
+                            printLn("# p1 lv1.2 = |" + lv1_Query + "|");
+                            //MessageBox.Show("cp 1.2");
 
                             resul_Lv1 = JObject.Parse(JSON_Obj.ToString()).GetValue(lv1_Query);
                         }
@@ -169,20 +169,20 @@ namespace Test_getHardwareInfo
                             string obj_Lv2_Name = lv2_Query.Split('[')[0];
                             int obj_Lv2_Name_Index = Int32.Parse(lv2_Query.Split('[')[1].Replace("[", "").Replace("]", ""));
 
-                            tb_Disp.Text += "# p1 lv2.1 = |" + lv2_Query + "|\n";
-                            tb_Disp.Text += "# obj_Lv2_Name = |" + obj_Lv2_Name + "|\n";
-                            tb_Disp.Text += "# obj_Lv2_Name_Index = |" + obj_Lv2_Name_Index + "|\n";
+                            printLn("# p1 lv2.1 = |" + lv2_Query + "|");
+                            printLn("# obj_Lv2_Name = |" + obj_Lv2_Name + "|");
+                            printLn("# obj_Lv2_Name_Index = |" + obj_Lv2_Name_Index + "|");
 
-                            MessageBox.Show("cp 2.1");
+                            //MessageBox.Show("cp 2.1");
 
                             resul_Lv2 = JsonConvert.DeserializeObject<object[]>(resul_Lv1.GetValue(obj_Lv2_Name).ToString())[obj_Lv2_Name_Index];
 
                         }
                         else
                         {
-                            tb_Disp.Text += "# lv2.2 = |" + lv2_Query + "|\n";
-                            tb_Disp.Text += "# p1 lv2.2 = |" + lv2_Query + "|\n";
-                            MessageBox.Show("cp 2.2");
+                            printLn("# lv2.2 = |" + lv2_Query + "|");
+                            printLn("# p1 lv2.2 = |" + lv2_Query + "|");
+                            //MessageBox.Show("cp 2.2");
 
                             resul_Lv2 = JObject.Parse(resul_Lv1.ToString()).GetValue(lv2_Query); ;
 
@@ -193,7 +193,7 @@ namespace Test_getHardwareInfo
 
 
                     var resul_Lv3 = (dynamic)null;
-                    string lv3_Query = ""; 
+                    string lv3_Query = "";
                     if (JSON_Query_Length > 2)
                     {
                         lv3_Query = _JSON_QueryString_Arr[2];
@@ -203,20 +203,20 @@ namespace Test_getHardwareInfo
                             string obj_Lv3_Name = lv3_Query.Split('[')[0];
                             int obj_Lv3_Name_Index = Int32.Parse(lv3_Query.Split('[')[1].Replace("[", "").Replace("]", ""));
 
-                            tb_Disp.Text += "# p1 lv3.1 = |" + lv3_Query + "|\n";
-                            tb_Disp.Text += "# obj_Lv3_Name = |" + obj_Lv3_Name + "|\n";
-                            tb_Disp.Text += "# obj_Lv3_Name_Index = |" + obj_Lv3_Name_Index + "|\n";
+                            printLn("# p1 lv3.1 = |" + lv3_Query + "|");
+                            printLn("# obj_Lv3_Name = |" + obj_Lv3_Name + "|");
+                            printLn("# obj_Lv3_Name_Index = |" + obj_Lv3_Name_Index + "| ");
 
-                            MessageBox.Show("cp 3.1");
+                            //MessageBox.Show("cp 3.1");
 
                             resul_Lv3 = JsonConvert.DeserializeObject<object[]>(resul_Lv2.GetValue(obj_Lv3_Name).ToString())[obj_Lv3_Name_Index];
 
                         }
                         else
                         {
-                            tb_Disp.Text += "# lv3.2 = |" + lv3_Query + "|\n";
-                            tb_Disp.Text += "# p1 lv3.2 = |" + lv3_Query + "|\n";
-                            MessageBox.Show("cp 3.2");
+                            printLn("# lv3.2 = |" + lv3_Query + "| ");
+                            printLn("# p1 lv3.2 = |" + lv3_Query + "| ");
+                            //MessageBox.Show("cp 3.2");
 
                             resul_Lv3 = JObject.Parse(resul_Lv2.ToString()).GetValue(lv3_Query); ;
 
@@ -247,7 +247,7 @@ namespace Test_getHardwareInfo
                 }
                 catch (Exception ex)
                 {
-                    return "err2" + ex.Message + "\n";
+                    return "err2" + ex.Message;
                 }
 
             }
@@ -275,12 +275,11 @@ namespace Test_getHardwareInfo
                 JSON_QueryString_Arr.Add(JSON_QueryString);
             }
 
-            tb_Disp.Text += get_GET_JsonOBJ_Info(tb_url_api.Text, JSON_QueryString_Arr) + "\n";
+            printLn("_____________________");
+            printLn(">>> Result = " + get_GET_JsonOBJ_Info(tb_url_api.Text, JSON_QueryString_Arr));
+            printLn("_____________________");
 
-            tb_Disp.Text += "______" + "\n";
 
-
-            tb_Disp.ScrollToEnd();
 
         }
 
@@ -291,6 +290,14 @@ namespace Test_getHardwareInfo
             //tb_Disp.Text += get_HexPower_Example() + "\n";
 
 
+        }
+
+
+        private void printLn(string message)
+        {
+            tb_Disp.Text += message + "\n";
+
+            tb_Disp.ScrollToEnd();
         }
     }
 }
