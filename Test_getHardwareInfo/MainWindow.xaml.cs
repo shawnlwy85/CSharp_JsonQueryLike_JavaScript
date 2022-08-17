@@ -98,8 +98,23 @@ namespace Test_getHardwareInfo
         }
 
 
-        private string get_GET_JsonOBJ_Info(string _URL_API, List<string> _JSON_QueryString_Arr)
+        private string get_GET_JsonOBJ_Info(string _URL_API, string _JSON_QueryString)
         {
+            // -------------------------------------------------------- manage jsonquery string 
+            List<string> _JSON_QueryString_Arr = new List<string>();
+
+
+            if (_JSON_QueryString.Contains(".") == true)
+            {
+                _JSON_QueryString_Arr.AddRange(_JSON_QueryString.Split('.'));
+
+            }
+            else
+            {
+                _JSON_QueryString_Arr.Add(_JSON_QueryString);
+            }
+
+
             // -------------------------------------------------------- Check query string items
             foreach (var item in _JSON_QueryString_Arr)
             {
@@ -262,21 +277,12 @@ namespace Test_getHardwareInfo
             ////string JSON_QueryString = "miner.devices[0].info";
             string JSON_QueryString = tb_jsonquery.Text;//"miner.devices[0].info";
 
-            List<string> JSON_QueryString_Arr = new List<string>();
 
-
-            if (JSON_QueryString.Contains(".") == true)
-            {
-                JSON_QueryString_Arr.AddRange(JSON_QueryString.Split('.'));
-
-            }
-            else
-            {
-                JSON_QueryString_Arr.Add(JSON_QueryString);
-            }
 
             printLn("_____________________");
-            printLn(">>> Result = " + get_GET_JsonOBJ_Info(tb_url_api.Text, JSON_QueryString_Arr));
+            printLn(">>> JsonQuery \t= " + tb_jsonquery.Text);
+            printLn(">>> Result \t= " + get_GET_JsonOBJ_Info(tb_url_api.Text, tb_jsonquery.Text));
+
             printLn("_____________________");
 
 
