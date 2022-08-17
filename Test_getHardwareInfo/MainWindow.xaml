@@ -1,0 +1,17 @@
+﻿<Window x:Class="Test_getHardwareInfo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test_getHardwareInfo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="528" Width="800">
+    <Grid>
+        <Button x:Name="btn_Test" Content="C# query Json like JS" HorizontalAlignment="Left" Margin="651,391,0,0" VerticalAlignment="Top" Height="56" Width="130" Click="btn_Test_Click"/>
+        <TextBox x:Name="tb_Disp" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="629" Height="358"/>
+        <Button x:Name="btn_Test2" Content="Test2" HorizontalAlignment="Left" Margin="685,200,0,0" VerticalAlignment="Top" Height="56" Width="79" Click="btn_Test2_Click"/>
+        <TextBox x:Name="tb_url_api" HorizontalAlignment="Left" Height="20" Margin="10,396,0,0" TextWrapping="Wrap" Text="https://jsonkeeper.com/b/H60E" VerticalAlignment="Top" Width="629"/>
+        <TextBox x:Name="tb_jsonquery" HorizontalAlignment="Left" Height="20" Margin="10,427,0,0" TextWrapping="Wrap" Text="miner.devices[0].info" VerticalAlignment="Top" Width="629"/>
+
+    </Grid>
+</Window>
